@@ -16,8 +16,22 @@ public class DeathZone : MonoBehaviour {
         //int y = SceneManager.GetActiveScene().buildIndex;
         //SceneManager.LoadSceneAsync(y);
 
+<<<<<<< HEAD
         if(c.tag == "Player")
         {
+=======
+
+        
+            
+
+        if (c.tag == "Player") {
+<<<<<<< HEAD
+			
+=======
+
+
+>>>>>>> 65a3fb45c3b414c7468a850c36ca753569508cd2
+>>>>>>> 47505800c60f0877505f15a2ea1c9967a93ae0a4
             c.gameObject.SetActive(false);
             StartCoroutine(respawn(c));
         }
@@ -27,7 +41,15 @@ public class DeathZone : MonoBehaviour {
     IEnumerator respawn(Collider c) {
         yield return new WaitForSeconds(delay);
         Instantiate(player, instancier.position, Quaternion.identity);
+<<<<<<< HEAD
+		Destroy(c.gameObject);
+=======
         Destroy(c.gameObject);
+<<<<<<< HEAD
+=======
+>>>>>>> 65a3fb45c3b414c7468a850c36ca753569508cd2
+
+>>>>>>> 47505800c60f0877505f15a2ea1c9967a93ae0a4
     }
 
 }
