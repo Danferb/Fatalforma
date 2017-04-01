@@ -21,8 +21,8 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-		
-	}
+        
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -32,7 +32,7 @@ public class GameManager : MonoBehaviour {
             if (StaticData.airPillar == 1)
             {
                 Instantiate(airFlame, airPillar.position, Quaternion.identity);
-                fire = 1;
+                air = 1;
             }
         }
         if (earth == 0)
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour {
                 earth = 1;
             }
         }
-        
+
         if (fire == 0)
         {
             if (StaticData.firePillar == 1)
@@ -60,7 +60,7 @@ public class GameManager : MonoBehaviour {
                 water = 1;
             }
         }
-        
-		
-	}
+
+
+    }
 }
