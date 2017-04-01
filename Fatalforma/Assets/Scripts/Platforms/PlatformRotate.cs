@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlatformRotate : MonoBehaviour {
 
+    private readonly float speedFinal = 36;
+    private int change = 1;
+
     public float speed = 36;
     public float delay = 5;
-    private int change = 1;
     //Update is called once per frame
     void Start() {
         StartCoroutine(Rotator());
@@ -32,11 +34,16 @@ public class PlatformRotate : MonoBehaviour {
         yield return new WaitForSeconds(1);
         transform.Rotate(0, 0, 0);
     }
-
-    public bool IsMove() {
-        return true;
+    
+    public void SetMove(bool isMove) {
+        if (isMove) {
+            speed = speedFinal;
+        } else {
+            speed = 0;
+        }
     }
 
-    public void SetMove() {
+    private void OnTriggerEnter(Collider other) {
+        print("Has entrado en: " + other.ToString());
     }
 }
