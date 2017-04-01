@@ -5,6 +5,7 @@ using UnityEngine;
 public class ManagerZonePlatform : MonoBehaviour {
 
     public GameObject[] waypoints;
+    public List<GameObject> plaformsFixed;
 
     void Start() {
         waypoints = new GameObject[transform.childCount];
@@ -14,13 +15,21 @@ public class ManagerZonePlatform : MonoBehaviour {
             waypoints[i].SendMessage("SetMove", false);
             i++;
         }
-        print("Hijos: " + waypoints.Length);
-        //waypoints[0].SendMessage("SetMove", true);
-
+        if (plaformsFixed != null && plaformsFixed.Count > 0) {
+            foreach (GameObject gObjt in plaformsFixed) {
+                gObjt.SendMessage("SetFixedPlatform", true);
+            }
+        }
     }
 
     // Update is called once per frame
     void Update() {
 
+    }
+
+    public static void ActivatePlatform(GameObject platform) {        
+        if (!platform.GetComponent<PlatformRotate>().isFixedPlatform()) {
+            platform.SendMessage("SetMove", true);
+        }
     }
 }

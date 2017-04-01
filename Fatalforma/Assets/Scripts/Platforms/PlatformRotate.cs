@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlatformRotate : MonoBehaviour {
 
     private readonly float speedFinal = 36;
+    private bool fixedPlatform = false;
     private int change = 1;
 
     public float speed = 36;
@@ -43,7 +44,16 @@ public class PlatformRotate : MonoBehaviour {
         }
     }
 
+    public void SetFixedPlatform(bool fixedPlat) {
+        fixedPlatform = fixedPlat;
+    }
+
+    public bool isFixedPlatform() {
+        return fixedPlatform;
+    }
+
     private void OnTriggerEnter(Collider other) {
         print("Has entrado en: " + other.ToString());
+        ManagerZonePlatform.ActivatePlatform(gameObject);
     }
 }
