@@ -33,4 +33,12 @@ public class PlatformRotate : MonoBehaviour {
         yield return new WaitForSeconds(1);
         transform.Rotate(0, 0, 0);
     }
+
+    public bool IsMove() {
+        return move;
+    }
+
+    public void SetMove(bool isMove) {
+        move = isMove;
+    }
 }
