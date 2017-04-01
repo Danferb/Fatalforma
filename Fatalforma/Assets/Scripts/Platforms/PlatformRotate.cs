@@ -7,7 +7,6 @@ public class PlatformRotate : MonoBehaviour {
     public float speed = 36;
     public float delay = 5;
     private int change = 1;
-    private bool move = true;
     //Update is called once per frame
     void Start() {
         StartCoroutine(Rotator());
@@ -23,7 +22,7 @@ public class PlatformRotate : MonoBehaviour {
     }
 
     IEnumerator Rotator() {
-        while (IsMove()) {
+        while (true) {
             change *= -1;
             yield return new WaitForSeconds(delay);
         }
@@ -35,10 +34,9 @@ public class PlatformRotate : MonoBehaviour {
     }
 
     public bool IsMove() {
-        return move;
+        return true;
     }
 
-    public void SetMove(bool isMove) {
-        move = isMove;
+    public void SetMove() {
     }
 }
