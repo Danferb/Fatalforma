@@ -11,10 +11,11 @@ public class ManagerZonePlatform : MonoBehaviour {
         int i = 0;
         foreach (Transform t in transform) {
             waypoints[i] = t.gameObject;
-            waypoints[i].SendMessage("SetMove",false);
+            waypoints[i].SendMessage("SetMove", false);
             i++;
         }
         print("Hijos: " + waypoints.Length);
+        waypoints[0].SendMessage("SetMove", true);
 
     }
 

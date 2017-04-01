@@ -23,7 +23,7 @@ public class PlatformRotate : MonoBehaviour {
     }
 
     IEnumerator Rotator() {
-        while (true) {
+        while (IsMove()) {
             change *= -1;
             yield return new WaitForSeconds(delay);
         }
