@@ -42,12 +42,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
-		private Rigidbody rb;
-
         // Use this for initialization
         private void Start()
         {
-			rb = GetComponent<Rigidbody> ();
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
