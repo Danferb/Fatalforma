@@ -15,7 +15,7 @@ public class ManagerZonePlatform : MonoBehaviour {
             i++;
         }
         print("Hijos: " + waypoints.Length);
-        waypoints[0].SendMessage("SetMove", true);
+        //waypoints[0].SendMessage("SetMove", true);
 
     }
 
