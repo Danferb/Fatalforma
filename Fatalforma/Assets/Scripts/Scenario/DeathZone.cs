@@ -17,6 +17,7 @@ public class DeathZone : MonoBehaviour {
         //SceneManager.LoadSceneAsync(y);
         if(c.tag == "Player")
         {
+            
             c.gameObject.SetActive(false);
             StartCoroutine(respawn(c));
             
