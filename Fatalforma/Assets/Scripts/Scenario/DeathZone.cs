@@ -11,25 +11,23 @@ public class DeathZone : MonoBehaviour {
 
     private GameObject target;
 
-	void OnTriggerEnter(Collider c){
+    void OnTriggerEnter(Collider c) {
         //Application.LoadLevel(Application.loadedLevel);
         //int y = SceneManager.GetActiveScene().buildIndex;
         //SceneManager.LoadSceneAsync(y);
-        if(c.tag == "Player")
-        {
+        if (c.tag == "Player") {
             c.gameObject.SetActive(false);
             StartCoroutine(respawn(c));
-            
-        }
-        
-	}
 
-    IEnumerator respawn (Collider c)
-    {
+        }
+
+    }
+
+    IEnumerator respawn(Collider c) {
         yield return new WaitForSeconds(delay);
         Instantiate(player, instancier.position, Quaternion.identity);
         Destroy(c);
 
     }
-    
+
 }
