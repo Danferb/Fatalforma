@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -14,6 +15,10 @@ public class GameManager : MonoBehaviour {
     public Transform waterPillar;
     public Transform airPillar;
     public Transform earthPillar;
+    public Text timerText;
+    public Text stateText;
+    public float time = 0.0f;
+
 
     private int fire = 0;
     private int water = 0;
@@ -23,12 +28,14 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        
+        timerText.text = time + "";
+        StartCoroutine(timer());
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+        timerText.text = time + "";
         if (air == 0)
         {
             if (StaticData.airPillar == 1)
@@ -63,6 +70,18 @@ public class GameManager : MonoBehaviour {
             }
         }
 
+
+    }
+
+    IEnumerator timer ()
+    {
+        while (time > 0)
+        {
+            yield return new WaitForSeconds(1);
+            time--;
+            timerText.text = time + "";
+        }
+        
 
     }
 }
