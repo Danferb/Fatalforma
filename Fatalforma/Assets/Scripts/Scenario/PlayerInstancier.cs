@@ -10,7 +10,7 @@ public class PlayerInstancier : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
-        Instantiate(player, instancier.position, Quaternion.identity);
+        Instantiate(player, instancier.position, Quaternion.Euler(new Vector3(0,180,0)));
 	}
 	
 	
