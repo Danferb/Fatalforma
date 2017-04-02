@@ -8,11 +8,15 @@ public class AirPillarExtinghiser : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
     {
-        if (other.tag == "Player" && StaticData.yellow == 1)
+        if (other.tag == "Player")
         {
-			this.GetComponent<AudioSource> ().PlayOneShot (ac, 0.5f); 
-            StaticData.airPillar = 1;
-            Destroy(gameObject);
+            if (StaticData.yellow == 1)
+            {
+                this.GetComponent<AudioSource>().PlayOneShot(ac, 0.5f);
+                StaticData.airPillar = 1;
+                Destroy(gameObject);
+            }
+			
         }
 
       
