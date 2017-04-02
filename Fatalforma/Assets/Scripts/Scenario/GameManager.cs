@@ -38,10 +38,6 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-<<<<<<< HEAD
-=======
-        
->>>>>>> 8f7b16469ef718bdb045a2629b5b5ba33ed5ced2
         if (air == 0)
         {
             if (StaticData.airPillar == 1)
@@ -87,9 +83,10 @@ public class GameManager : MonoBehaviour {
             //rojo
             time = finalTime;
             stateText.text = "RED";
+            StaticData.red = 1;
             while (time > 0)
             {
-                StaticData.red = 1;
+                
                 yield return new WaitForSeconds(1);
                 time--;
                 timerText.text = time + "";
@@ -106,9 +103,10 @@ public class GameManager : MonoBehaviour {
             //verde
             time = finalTime;
             stateText.text = "GREEN";
+            StaticData.green = 1;
             while (time > 0)
             {
-                StaticData.green = 1;
+                
                 yield return new WaitForSeconds(1);
                 time--;
                 timerText.text = time + "";
@@ -124,9 +122,10 @@ public class GameManager : MonoBehaviour {
             //Azul
             time = finalTime;
             stateText.text = "BLUE";
+            StaticData.blue = 1;
             while (time > 0)
             {
-                StaticData.blue = 1;
+                
                 yield return new WaitForSeconds(1);
                 time--;
                 timerText.text = time + "";
@@ -142,9 +141,10 @@ public class GameManager : MonoBehaviour {
             //Amarillo
             time = finalTime;
             stateText.text = "YELLOW";
+            StaticData.yellow = 1;
             while (time > 0)
             {
-                StaticData.yellow = 1;
+                
                 yield return new WaitForSeconds(1);
                 time--;
                 timerText.text = time + "";
