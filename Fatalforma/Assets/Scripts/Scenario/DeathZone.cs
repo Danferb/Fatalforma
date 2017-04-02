@@ -17,8 +17,8 @@ public class DeathZone : MonoBehaviour {
 			asource = GetComponent<AudioSource>();
 			asource.PlayOneShot (asource.clip);
 			Instantiate(player, instancier.position, Quaternion.identity);
-			Destroy(c.gameObject);
+            //world.transform.rotation.Set(new Vector3(0,0,0));
+            Destroy(c.gameObject);
         }
-        world.transform.Rotate(new Vector3(0, 0, 0));
     }
 }
