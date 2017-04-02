@@ -8,7 +8,7 @@ public class WaterPillarScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && StaticData.blue == 1)
         {
             StaticData.waterPillar = 1;
             Destroy(gameObject);
