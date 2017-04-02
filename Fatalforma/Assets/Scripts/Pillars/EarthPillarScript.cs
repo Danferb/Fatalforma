@@ -8,12 +8,15 @@ public class EarthPillarScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && StaticData.green == 1)
+        if (other.tag == "Player")
         {
-
-			this.GetComponent<AudioSource> ().PlayOneShot (ac, 0.5f); 
-            StaticData.earthPillar = 1;
-            Destroy(gameObject);
+            if (StaticData.green == 1)
+            {
+                this.GetComponent<AudioSource>().PlayOneShot(ac, 0.5f);
+                StaticData.earthPillar = 1;
+                Destroy(gameObject);
+            }
+			
         }
 
 

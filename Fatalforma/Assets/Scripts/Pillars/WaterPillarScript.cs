@@ -8,12 +8,15 @@ public class WaterPillarScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && StaticData.blue == 1)
+        if (other.tag == "Player")
         {
-
-			this.GetComponent<AudioSource> ().PlayOneShot (ac, 0.5f); 
-            StaticData.waterPillar = 1;
-            Destroy(gameObject);
+            if (StaticData.blue == 1)
+            {
+                this.GetComponent<AudioSource>().PlayOneShot(ac, 0.5f);
+                StaticData.waterPillar = 1;
+                Destroy(gameObject);
+            }
+			
         }
 
 

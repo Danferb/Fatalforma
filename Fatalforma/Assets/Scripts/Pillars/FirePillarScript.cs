@@ -7,12 +7,15 @@ public class FirePillarScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player" && StaticData.red == 1)
+        if (other.tag == "Player")
         {
-
-			this.GetComponent<AudioSource> ().PlayOneShot (this.GetComponent<AudioSource>().clip,0.5f); 
-            StaticData.firePillar = 1;
-            Destroy(gameObject);
+            if (StaticData.red == 1)
+            {
+                this.GetComponent<AudioSource>().PlayOneShot(this.GetComponent<AudioSource>().clip, 0.5f);
+                StaticData.firePillar = 1;
+                Destroy(gameObject);
+            }
+			
         }
 
 
