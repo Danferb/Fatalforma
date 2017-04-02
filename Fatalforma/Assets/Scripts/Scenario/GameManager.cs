@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        timerText.text = time + "";
+        
         if (air == 0)
         {
             if (StaticData.airPillar == 1)
