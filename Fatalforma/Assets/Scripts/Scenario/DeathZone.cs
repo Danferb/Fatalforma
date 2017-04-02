@@ -18,7 +18,7 @@ public class DeathZone : MonoBehaviour {
 			asource.PlayOneShot (asource.clip);
 			Instantiate(player, instancier.position, Quaternion.identity);
 			Destroy(c.gameObject);
-            world.transform.Rotate(new Vector3(0, 0, 0));
         }
+        world.transform.Rotate(new Vector3(0, 0, 0));
     }
 }
