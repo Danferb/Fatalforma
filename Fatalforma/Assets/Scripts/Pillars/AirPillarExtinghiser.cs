@@ -11,7 +11,7 @@ public class AirPillarExtinghiser : MonoBehaviour {
         {
             if (StaticData.yellow == 1)
             {
-                GetComponent<AudioSource>().Play();
+                GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip, 0.5f);
                 StaticData.airPillar = 1;
                 Destroy(gameObject);
             }
