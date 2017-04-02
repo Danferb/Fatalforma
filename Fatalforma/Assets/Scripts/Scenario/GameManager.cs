@@ -38,10 +38,6 @@ public class GameManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-<<<<<<< HEAD
-=======
-        
->>>>>>> 8f7b16469ef718bdb045a2629b5b5ba33ed5ced2
         if (air == 0)
         {
             if (StaticData.airPillar == 1)
