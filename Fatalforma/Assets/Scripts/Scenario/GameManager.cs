@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
     public static int YELLOW = 3;
 
     private GameObject actualPlayer;
-    private float finalTime = 300;
+    private float finalTime = 100;
     private int fire = 0;
     private int water = 0;
     private int earth = 0;
@@ -177,11 +177,27 @@ public class GameManager : MonoBehaviour {
                         stateText.text = "EXIT";
                         timerText.text = "IN TIME";
                     }
+                    else
+                    {
+                        StartCoroutine(StateController());
+                    }
+                }
+                else
+                {
+                    StartCoroutine(StateController());
                 }
             }
+            else
+            {
+                StartCoroutine(StateController());
+            }
         }
-
-        StartCoroutine(StateController());
+        else
+        {
+            StartCoroutine(StateController());
+        }
+        
+        
     }
 
     void CambiarCielo(string color) {

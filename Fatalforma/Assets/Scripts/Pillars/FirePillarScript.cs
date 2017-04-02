@@ -11,7 +11,7 @@ public class FirePillarScript : MonoBehaviour {
         {
             if (StaticData.red == 1)
             {
-                this.GetComponent<AudioSource>().PlayOneShot(this.GetComponent<AudioSource>().clip, 0.5f);
+                GetComponent<AudioSource>().PlayOneShot(this.GetComponent<AudioSource>().clip, 0.5f);
                 StaticData.firePillar = 1;
                 Destroy(gameObject);
             }
