@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour {
     public GameObject airFlame;
     public GameObject earthFlame;
     public GameObject player;
+    public GameObject skyBox;
     public Transform firePillar;
     public Transform waterPillar;
     public Transform airPillar;
@@ -20,6 +21,11 @@ public class GameManager : MonoBehaviour {
     public Text timerText;
     public Text stateText;
     public float time = 0.0f;
+    public List<Material> skyboxMaterial;
+    public static int BLUE = 0;
+    public static int RED = 1;
+    public static int GREEN = 2;
+    public static int YELLOW = 3;
 
     private GameObject actualPlayer;
     private float finalTime = 300;
@@ -84,6 +90,8 @@ public class GameManager : MonoBehaviour {
             time = finalTime;
             stateText.text = "RED";
             StaticData.red = 1;
+            // cambiar cielo
+            CambiarCielo("RED");
             while (time > 0)
             {
                 
@@ -104,6 +112,7 @@ public class GameManager : MonoBehaviour {
             time = finalTime;
             stateText.text = "GREEN";
             StaticData.green = 1;
+            CambiarCielo("GREEN");
             while (time > 0)
             {
                 
@@ -123,6 +132,7 @@ public class GameManager : MonoBehaviour {
             time = finalTime;
             stateText.text = "BLUE";
             StaticData.blue = 1;
+            CambiarCielo("BLUE");
             while (time > 0)
             {
                 
@@ -142,6 +152,7 @@ public class GameManager : MonoBehaviour {
             time = finalTime;
             stateText.text = "YELLOW";
             StaticData.yellow = 1;
+            CambiarCielo("YELLOW");
             while (time > 0)
             {
                 
@@ -172,5 +183,25 @@ public class GameManager : MonoBehaviour {
 
         StartCoroutine(StateController());
     }
-    
+
+    void CambiarCielo(string color) {
+        print(color);
+        Material[] tempMaterial = new Material[1];
+       switch (color) {
+            case "RED":
+                tempMaterial[0] = skyboxMaterial[RED];
+                break;
+            case "GREEN":
+                tempMaterial[0] = skyboxMaterial[GREEN];
+                break;
+            case "YELLOW":
+                tempMaterial[0] = skyboxMaterial[YELLOW];
+                break;
+            case "BLUE":
+                tempMaterial[0] = skyboxMaterial[BLUE];
+                break;
+        }
+        skyBox.GetComponent<MeshRenderer>().materials = tempMaterial;
+    }
+
 }
