@@ -166,11 +166,27 @@ public class GameManager : MonoBehaviour {
                         stateText.text = "EXIT";
                         timerText.text = "IN TIME";
                     }
+                    else
+                    {
+                        StartCoroutine(StateController());
+                    }
+                }
+                else
+                {
+                    StartCoroutine(StateController());
                 }
             }
+            else
+            {
+                StartCoroutine(StateController());
+            }
         }
-
-        StartCoroutine(StateController());
+        else
+        {
+            StartCoroutine(StateController());
+        }
+        
+        
     }
     
 }
