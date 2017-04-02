@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
@@ -34,16 +35,31 @@ public class GameManager : MonoBehaviour {
     private int earth = 0;
     private int air = 0;
 
+    private bool isPaused;
+
 	// Use this for initialization
 	void Start ()
     {
         timerText.text = time + "";
         StartCoroutine(StateController());
+        isPaused = false;
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
+
+        if (Input.GetButtonDown("Cancel")) {
+            SceneManager.LoadScene("StartScene");
+        } else if (Input.GetButtonDown("Pause")) {
+            if (isPaused) {
+                isPaused = false;
+                Time.timeScale = 0;
+            } else {
+                isPaused = true;
+                Time.timeScale = 1;
+            }
+        }
         if (air == 0)
         {
             if (StaticData.airPillar == 1)

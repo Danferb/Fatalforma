@@ -14,5 +14,9 @@ public class StartSceneScript : MonoBehaviour {
         {
             SceneManager.LoadScene("Pedro");
         }
-	}
+        if (Input.GetButtonDown("Cancel")) {
+            Application.Quit();
+        }
+
+    }
 }
