@@ -133,6 +133,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
+			float mouseInput = Input.GetAxis("Mouse X");
+			Vector3 lookhere = new Vector3(0,mouseInput,0);
+			transform.Rotate(lookhere);
+
         }
 
 
