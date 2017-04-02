@@ -5,7 +5,6 @@ using UnityEngine;
 public class TransformPlayerWithPlatform : MonoBehaviour {
 
     public GameObject worldTarget;
-    public GameObject playerTarget;
     public float rotate = -20;
     private bool changed = false;
 
@@ -21,7 +20,9 @@ public class TransformPlayerWithPlatform : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (!changed && other.tag.Equals(GameManager.TAG_PLAYER)) {
-            worldTarget.transform.Rotate(new Vector3(rotate,0,0));
+            Quaternion target = Quaternion.Euler(rotate, 0, rotate);
+            worldTarget.transform.rotation = Quaternion.Slerp(worldTarget.transform.rotation, target, Time.deltaTime * 2.0f);
+            other.transform.RotateAround(other.transform.position, other.transform.up, rotate);
             changed = true;
         }
     }
