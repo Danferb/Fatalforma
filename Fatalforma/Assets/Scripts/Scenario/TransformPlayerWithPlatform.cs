@@ -20,10 +20,20 @@ public class TransformPlayerWithPlatform : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (!changed && other.tag.Equals(GameManager.TAG_PLAYER)) {
-            Quaternion target = Quaternion.Euler(rotate, 0, rotate);
-            worldTarget.transform.rotation = Quaternion.Slerp(worldTarget.transform.rotation, target, Time.deltaTime * 2.0f);
-            other.transform.RotateAround(other.transform.position, other.transform.up, rotate);
+            other.GetComponent<Rigidbody>().useGravity = false;
+            //other.GetComponent<Rigidbody>().AddForce(-other.transform.up * 1000, ForceMode.Force);
+            other.GetComponent<Rigidbody>().ResetInertiaTensor();
+
+            Quaternion target = Quaternion.Euler(rotate, 0, 0);
+            worldTarget.transform.rotation = Quaternion.Slerp(
+                worldTarget.transform.rotation, 
+                target, 
+                Time.deltaTime
+            );
+            other.transform.RotateAround(other.transform.position, other.transform.forward, rotate);
             changed = true;
+
+            Physics.gravity = target.eulerAngles;
         }
     }
 }
