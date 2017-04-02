@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
 
+    public static readonly string TAG_PLAYER = "Player";
+
     public GameObject fireFlame;
     public GameObject waterFlame;
     public GameObject airFlame;
