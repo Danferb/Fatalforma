@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour {
     public float time = 0.0f;
 
     private GameObject actualPlayer;
-    private float finalTime = 300;
+    private float finalTime = 100;
     private int fire = 0;
     private int water = 0;
     private int earth = 0;
