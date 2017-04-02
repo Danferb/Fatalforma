@@ -8,7 +8,7 @@ public class EarthPillarScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && StaticData.green == 1)
         {
             StaticData.earthPillar = 1;
             Destroy(gameObject);

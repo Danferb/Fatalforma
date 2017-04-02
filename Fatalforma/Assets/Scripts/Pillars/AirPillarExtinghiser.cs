@@ -8,7 +8,7 @@ public class AirPillarExtinghiser : MonoBehaviour {
 
 	void OnTriggerEnter (Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && StaticData.yellow == 1)
         {
             StaticData.airPillar = 1;
             Destroy(gameObject);

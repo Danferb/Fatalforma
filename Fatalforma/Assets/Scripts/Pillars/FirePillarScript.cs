@@ -8,7 +8,7 @@ public class FirePillarScript : MonoBehaviour {
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" && StaticData.red == 1)
         {
             StaticData.firePillar = 1;
             Destroy(gameObject);
