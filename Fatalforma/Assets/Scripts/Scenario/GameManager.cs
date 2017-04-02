@@ -83,9 +83,10 @@ public class GameManager : MonoBehaviour {
             //rojo
             time = finalTime;
             stateText.text = "RED";
+            StaticData.red = 1;
             while (time > 0)
             {
-                StaticData.red = 1;
+                
                 yield return new WaitForSeconds(1);
                 time--;
                 timerText.text = time + "";
@@ -102,9 +103,10 @@ public class GameManager : MonoBehaviour {
             //verde
             time = finalTime;
             stateText.text = "GREEN";
+            StaticData.green = 1;
             while (time > 0)
             {
-                StaticData.green = 1;
+                
                 yield return new WaitForSeconds(1);
                 time--;
                 timerText.text = time + "";
@@ -120,9 +122,10 @@ public class GameManager : MonoBehaviour {
             //Azul
             time = finalTime;
             stateText.text = "BLUE";
+            StaticData.blue = 1;
             while (time > 0)
             {
-                StaticData.blue = 1;
+                
                 yield return new WaitForSeconds(1);
                 time--;
                 timerText.text = time + "";
@@ -138,9 +141,10 @@ public class GameManager : MonoBehaviour {
             //Amarillo
             time = finalTime;
             stateText.text = "YELLOW";
+            StaticData.yellow = 1;
             while (time > 0)
             {
-                StaticData.yellow = 1;
+                
                 yield return new WaitForSeconds(1);
                 time--;
                 timerText.text = time + "";
